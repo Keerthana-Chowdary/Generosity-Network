@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SEVA-SAHAYATA-CHARITY</title>
+    <link rel="stylesheet" href="cstyle.css"> <!-- Link your CSS file here -->
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Header Styling */
+.header {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    position: relative; /* To ensure z-index is applied */
+    z-index: 1000; /* Make it sit on top of other elements */
+}
+
+
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.nav-links {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #007bff; /* Same color as the header */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Sections Styling */
+main {
+    padding: 20px;
+    background-color: #ffffff; /* Pure white for content clarity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds depth */
+    margin: 20px auto;
+    width: 80%; /* Centers the main content */
+    border-radius: 8px; /* Smooth corners */
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #007bff; /* Matches the theme */
+}
+
+p, label {
+    font-size: 1rem;
+    color: #333; /* Dark text for readability */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Slightly darker on hover */
+}
+
+
+
+
+    </style>
+</head>
+<body>
+   
+    <!-- Stylish Header -->
+    <header class="header">
+        <div class="header-container">
+            <h1>SEVA-SAHAYATA-CHARITY</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.php">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin_login.html">Admin Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <main>
+        <section id="contact-form">
+            <div class="wrapper centered">
+                <article class="letter">
+                    <form action="contactus.php" method="post">
+                    <div class="side">
+                        <h1>Contact us</h1>
+                        <p>
+                            <textarea name="msg" placeholder="Your message"></textarea>
+                        </p>
+                    </div>
+                    <div class="side">
+                        <p>
+                            <input type="text" name="name" placeholder="Your name">
+                        </p>
+                        <p>
+                            <input type="email" name="mail" placeholder="Your email">
+                        </p>
+                        <p>
+                            <button id="sendLetter" name="send" type="submit">Send</button>
+                        </p>
+                    </div>
+                </form>
+                </article>
+                <div class="envelope front"></div>
+                <div class="envelope back"></div>
+            </div>
+            <p class="result-message centered">Thank you for your message.We will get back to you soon!</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SEVA-SAHAYATA-CHARITY. All rights reserved.</p>
+    </footer>
+
+    <script>
+        //function addClass() {
+          //  document.body.classList.add("sent");
+       // }
+        //sendLetter.addEventListener("click", addClass);
+    const form = document.querySelector('form'); // Select the form
+    const sendButton = document.getElementById('sendLetter'); // Select the send button
+
+    form.addEventListener('submit', function (event) {
+        // Prevent default form submission
+        event.preventDefault();
+
+        // Trigger the animation by adding the "sent" class
+        document.body.classList.add('sent');
+
+        // Wait for the animation to complete (adjust timing if needed)
+        setTimeout(function () {
+            // Submit the form programmatically
+            form.submit();
+        }, 6000); // 3000ms = 3 seconds for animation
+    });
+    </script>
+    
+</body>
+</html>

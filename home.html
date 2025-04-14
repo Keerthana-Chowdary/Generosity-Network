@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVA-SAHAYATA-CHARITY</title>
+    <link rel="stylesheet" href="hstyle.css"> <!-- Link your CSS file here -->
+</head>
+<style>
+    /* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Header Styling */
+.header {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    position: relative; /* To ensure z-index is applied */
+    z-index: 1000; /* Make it sit on top of other elements */
+}
+
+
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.nav-links {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #007bff; /* Same color as the header */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Sections Styling */
+main {
+    padding: 20px;
+    background-color: #ffffff; /* Pure white for content clarity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds depth */
+    margin: 20px auto;
+    width: 80%; /* Centers the main content */
+    border-radius: 8px; /* Smooth corners */
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #007bff; /* Matches the theme */
+}
+
+p, label {
+    font-size: 1rem;
+    color: #333; /* Dark text for readability */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Slightly darker on hover */
+}
+
+
+.animation01, .animation02, .animation03, .animation04 {
+    pointer-events: none;
+}
+
+
+
+</style>
+<body>
+    <!-- Animation Code -->
+    <div class="animation01">
+        <div class="line_content line_content01">
+            <div class="line_wrapper line_wrapper01">
+                <div class="line01"></div>
+                <div class="line02"></div>
+            </div>
+        </div>
+        <div class="line_content line_content02">
+            <div class="line_wrapper line_wrapper02">
+                <div class="line02"></div>
+                <div class="line01"></div>
+            </div>
+        </div>
+    </div>
+    <div class="animation02">
+        <div class="square">
+            <span class="square_item square_item01"></span>
+            <span class="square_item square_item02"></span>
+            <span class="square_item square_item03"></span>
+            <span class="square_item square_item04"></span>
+            <span class="square_item square_item05"></span>
+            <span class="square_item square_item06"></span>
+            <span class="square_item square_item07"></span>
+            <span class="square_item square_item08"></span>
+            <span class="circle_item01"></span>
+            <span class="circle_item02"></span>
+            <span class="circle_item03"></span>
+            <span class="circle_item04"></span>
+            <span class="circle_item05"></span>
+            <span class="circle_item06"></span>
+            <span class="circle_item01_1"></span>
+            <span class="circle_item02_2"></span>
+            <span class="circle_item03_3"></span>
+            <span class="circle_item04_4"></span>
+            <span class="circle_item05_5"></span>
+            <span class="circle_item06_6"></span>
+        </div>
+    </div>
+    <div class="animation03">
+        <div></div>
+        <!-- Further divs for animation -->
+    </div>
+    <div class="animation04">
+        <div class="name_plate"></div>
+        <div class="name">Welcome To Seva Sahayata Charity</div>
+    </div>
+
+    <!-- Stylish Header -->
+    <header class="header">
+        <div class="header-container">
+            <h1>SEVA-SAHAYATA-CHARITY</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.php">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin_login.html">Admin Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Sections -->
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to SEVA-SAHAYATA-CHARITY! We aim to bring people together to support the community and create a positive impact.</p>
+        </section>
+
+        <section id="events">
+            <h2>Our Events</h2>
+            <p>Stay tuned for upcoming events and opportunities to contribute to our cause.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: seva-charity@example.com</p>
+            <p>Phone: +91-9876543210</p>
+        </section>
+
+        <section id="admin-login">
+            <h2>Admin Login</h2>
+            <form action="/admin-login" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SEVA-SAHAYATA-CHARITY. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Events</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/smart_wizard_theme_arrows.min.css" rel="stylesheet" type="text/css" />  
+
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light background for better visibility */
+            display: flex; /* Use flexbox to center the image */
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+    
+        .zoom-img {
+            width: 300px; /* Set a specific width for the image */
+            height: auto; /* Keep the image's aspect ratio */
+            animation: zoomEffect 5s ease-in-out infinite; /* Apply zoom animation */
+        }
+    
+        /* Keyframes for Zoom Effect */
+        @keyframes zoomEffect {
+            0% {
+                transform: scale(1); /* Original size */
+            }
+            50% {
+                transform: scale(1.1); /* Slightly zoom in */
+            }
+            100% {
+                transform: scale(1); /* Return to original size */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex flex-column align-items-center mt-200">
+            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">Click Here To Add Event</button>
+            <img src="https://i.pinimg.com/736x/05/ba/a4/05baa4df47f9a740e7878b08c575a3cf.jpg" alt="Pointing Image" class="zoom-img mb-3">
+            <a href="admin_dashboard.php" class="btn btn-secondary">Go Back</a>
+        </div>
+        <!-- Modal >
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Event</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="smartwizard">
+                            <ul>
+                                <li><a href="#step-1">Step 1<br /><small>Event Info</small></a></li>
+                                <li><a href="#step-2">Step 2<br /><small>Location Info</small></a></li>
+                                <li><a href="#step-3">Step 3<br /><small>Payment Info</small></a></li>
+                                <li><a href="#step-4">Step 4<br /><small>Confirm Details</small></a></li>
+                            </ul>
+                            <div class="mt-4">
+                                <form action="add_event.php" method="post">
+                                    <div id="step-1">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" name="eventName" class="form-control" placeholder="Event Name" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="date" class="form-control" name="eventDate" placeholder="Event Date" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <input type="text" name="location" class="form-control" placeholder="Event Location" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Time Duration(format:9AM-7PM)" name="duration" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-2">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input name="address" type="text" class="form-control" placeholder="Address" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input name="city" type="text" class="form-control" placeholder="City or Near City" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="state" placeholder="State" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="country" placeholder="Country" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-3">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" name="cardno" class="form-control" placeholder="Card Number" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="cardname" class="form-control" placeholder="Card Holder Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <input type="text" name="cvv" class="form-control" placeholder="CVV" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="mobile" class="form-control" placeholder="Mobile Number" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <span>You can re-check the details you entered if necessary then submit the event by clicking below button</span>
+                                                <div id="step-4">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <button type="submit" name="submit" class="btn btn-primary">Submit Event</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.smartWizard.min.js"></script>
+<script>
+     
+    $(document).ready(function(){
+
+$('#smartwizard').smartWizard({
+        selected: 0,
+        theme: 'arrows',
+        autoAdjustHeight:true,
+        transitionEffect:'fade',
+        showStepURLhash: false,
+     
+});
+
+});
+</script>
+</html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Events</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/smart_wizard_theme_arrows.min.css" rel="stylesheet" type="text/css" />
+
+<title>Add Events</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        /* Black-and-white background */
+        body {
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Button styling */
+        .btn-primary {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hand pointer animation */
+        .hand-pointer {
+            position: absolute;
+            top: -50px;
+            left: calc(50% - 20px);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: bounce 1s infinite;
+        }
+
+        .hand-pointer::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid white;
+            transform: translateX(-50%);
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <!-- Button with hand pointer -->
+        <div class="position-relative">
+            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">Click Here To Add Event</button>
+            <div class="hand-pointer"></div>
+        </div>
+        <a href="admin_dashboard.php" class="btn btn-secondary">Go Back</a>
+    </div>
+        <!-- Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Event</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="smartwizard">
+                            <ul>
+                                <li><a href="#step-1">Step 1<br /><small>Event Info</small></a></li>
+                                <li><a href="#step-2">Step 2<br /><small>Location Info</small></a></li>
+                                <li><a href="#step-3">Step 3<br /><small>Payment Info</small></a></li>
+                                <li><a href="#step-4">Step 4<br /><small>Confirm Details</small></a></li>
+                            </ul>
+                            <div class="mt-4">
+                                <form action="add_event.php" method="post">
+                                    <div id="step-1">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" name="eventName" class="form-control" placeholder="Event Name" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="date" class="form-control" name="eventDate" placeholder="Event Date" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <input type="text" name="location" class="form-control" placeholder="Event Location" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Time Duration(format:9AM-7PM)" name="duration" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-2">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input name="address" type="text" class="form-control" placeholder="Address" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input name="city" type="text" class="form-control" placeholder="City or Near City" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="state" placeholder="State" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="country" placeholder="Country" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-3">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" name="cardno" class="form-control" placeholder="Card Number" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="cardname" class="form-control" placeholder="Card Holder Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6">
+                                                <input type="text" name="cvv" class="form-control" placeholder="CVV" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="mobile" class="form-control" placeholder="Mobile Number" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <span style="color:black">You can re-check the details you entered if necessary then submit the event by clicking below button</span>
+                                                <div id="step-4">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <button type="submit" name="submit" class="btn btn-primary">Submit Event</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.smartWizard.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#smartwizard').smartWizard({
+            selected: 0,
+            theme: 'arrows',
+            autoAdjustHeight: true,
+            transitionEffect: 'fade',
+            showStepURLhash: false,
+        });
+    });
+</script>
+
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Events</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        /* Black-and-white background */
+        body {
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Button styling */
+        .btn-primary {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hand pointer animation */
+        .hand-pointer {
+            position: absolute;
+            top: -50px;
+            left: calc(50% - 20px);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: bounce 1s infinite;
+        }
+
+        .hand-pointer::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid white;
+            transform: translateX(-50%);
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <!-- Button with hand pointer >
+        <div class="position-relative">
+            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">Click Here To Add Event</button>
+            <div class="hand-pointer"></div>
+        </div>
+        <a href="admin_dashboard.php" class="btn btn-secondary">Go Back</a>
+    </div>
+
+    <!-- Modal >
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Event</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form content -->
+                    <form>
+                        <!-- Example fields >
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <input type="text" class="form-control" id="eventName" placeholder="Enter event name">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Event Date</label>
+                            <input type="date" class="form-control" id="eventDate">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html-->
