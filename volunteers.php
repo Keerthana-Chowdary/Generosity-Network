@@ -230,6 +230,8 @@ $result = $conn->query($sql);
                         <th>Date of Birth</th>
                         <th>City</th>
                         <th>District</th>
+                        <th>Event Name</th>
+                        <th>Event Location</th>
                     </tr>
                 </thead>
                 <tbody>
