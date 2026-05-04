@@ -57,7 +57,7 @@ This project also improved my problem-solving skills and gave me confidence in b
 
 ## 🎥 Demo
 Check out the working demo of the project here::
-👉 [https://www.linkedin.com/posts/keerthana-pentyala-57609a274_excited-to-share-my-latest-project-activity-7317414110931886080-msfg](https://drive.google.com/file/d/1bdr4J1Gs3kyWcvpxBFkJVN_7WQcoeA_n/view?usp=sharing)
+👉 ( https://drive.google.com/file/d/1bdr4J1Gs3kyWcvpxBFkJVN_7WQcoeA_n/view?usp=sharing )
 
 
 ---
